@@ -1,0 +1,54 @@
+@mixin centrado{
+    margin: 0px auto;
+}
+.header {
+    @include centrado;
+    background-color: black;
+    color: wheat;
+}
+
+@mixin highlighted-link {
+    a {
+        background-color: yellow;
+        font-style: italic;
+        text-decoration: none;
+    }
+}
+
+@include highlighted-link;
+
+@mixin centrado_menu {
+    @include centrado;
+    background-color: #666;
+    color: white;
+    height: 3rem;
+}
+
+.main_menu {
+    @include centrado_menu;
+}
+
+@mixin girar($grados){
+    -webkit-transform: rotate(#{$grados + "deg"});
+    -ms-transform: rotate(#{$grados + "deg"});
+    transform: rotate(#{$grados + "deg"});
+}
+
+.side_tile {
+    @include girar(90);
+    color: red;
+}
+
+@mixin logo($image, $radio: 10px){
+    background-image: url("#{$image}");
+    background-position: center;
+    border-radius: $radio;
+}
+
+.logo-cuadrado {
+    @include logo("img/logocuadrado.png", 0px);
+}
+
+.logo-redondeado {
+    @include logo("img/logoredondeado.png");
+}

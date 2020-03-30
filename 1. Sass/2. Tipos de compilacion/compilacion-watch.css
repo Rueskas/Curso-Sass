@@ -1,0 +1,32 @@
+/* Elementos
+    de la cabecera*/
+.header {
+  background-color: #cccccc;
+}
+
+.btn-error {
+  background-color: "#f00";
+}
+
+.container {
+  background-image: url(img/fondos/default.png);
+}
+
+/*
+    Web desarrollada por Yo
+*/
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: #cccccc;
+}
+a:visited {
+  color: #00f;
+}
+a:active {
+  color: #0f0;
+}
+
+/*# sourceMappingURL=compilacion-watch.css.map */

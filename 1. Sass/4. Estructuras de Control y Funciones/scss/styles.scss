@@ -1,0 +1,66 @@
+$light-theme: false;
+$dark-theme: false;
+
+header {
+    @if $light-theme == true {
+        background-color: rgb(233, 233, 233);
+        color: rgb(20, 20, 20);
+    } @else if $dark-theme == true {
+        background-color: rgb(20, 20, 20);
+        color: rgb(233, 233, 233);
+    } @else {
+        background-color: rgb(223, 223, 223);
+        color: #444;
+    }
+}
+
+$num: 1;
+$color-list: (#0f0, #00f, orange, #ccc);
+
+@while $num < 5 {
+    td:nth-child(#{$num}) {
+        color: #f00;
+        background-color: nth($color-list, $num);
+    }
+    $num: $num + 1;
+}
+
+$num: 1;
+
+//@for $i from 1 through 4
+@for $i from 1 to 5 {
+    p:nth-of-type(#{$i}) {
+        color: #f00;
+        background-color: nth($color-list, $i);
+    }
+}
+
+$usuarios: pepe, lola, manuel;
+
+@each $u in $usuarios{
+     .profile-#{$u}{
+        background: image-url("img/#{u}.png") no repeat;    
+     }
+}
+
+$mapa: (
+    pepe: "pepe.png",
+    lola: "lola.png",
+    manuel: "manuel.png"
+);
+
+@each $k, $v in $mapa{
+    .profile-#{$k}{
+        background: image-url("img/#{$v}") no repeat;
+    }
+}
+
+@function anchura-col($cols, $total){
+    @return percentage($cols/$total);
+}
+
+.sidebar {
+    color: white;
+    background-color: #00f;
+    width: anchura-col(5,10);
+}

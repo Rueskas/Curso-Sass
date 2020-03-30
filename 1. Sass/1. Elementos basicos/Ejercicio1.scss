@@ -1,0 +1,60 @@
+//Variables de colores
+$grey: #bbbbbb;
+$header-background: $grey;
+$link-normal: #000;
+$link-hover: $grey;
+$link-visited: #00f;
+$link-active: #0f0;
+
+/* Elementos
+    de la cabecera*/
+.header {
+    background-color: $header-background;
+}
+
+//Lista
+$sizes: (40px, 80px, 160px);
+
+//Mapa
+$breakpoints: (
+    "pequeño": 576px,
+    "medio": 768px,
+    "grande": 992px,
+);
+
+//Interpolacion en selectores
+$button-type: "error";
+$btn-color: "#f00";
+
+.btn-#{$button-type} {
+    background-color: $btn-color;
+}
+
+//Interpolacion en uso de funciones
+$fondo: "img/fondos/default.png";
+
+.container {
+    background-image: url(#{$fondo});
+}
+
+//Interpolacion en comentarios
+$autor: "Yo";
+
+/*
+    Web desarrollada por #{$autor}
+*/
+
+//Anidamiento
+a {
+    color: $link-normal;
+    text-decoration: none;
+    &:hover {
+        color: $link-hover;
+    }
+    &:visited {
+        color: $link-visited;
+    }
+    &:active {
+        color: $link-active;
+    }
+}
